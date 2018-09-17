@@ -75,9 +75,7 @@ echo -e "masternode=1\nmasternodeprivkey=${MNGENKEY}\nexternalip=${MN_EXTERNAL_I
 sudo systemctl restart kauricoin
 
 echo "Installing sentinel engine"
-sudo wget https://storage.sbg1.cloud.ovh.net/v1/AUTH_e473c1c38f894ec499e6c02673b407b0/dl/kauricoin-sentinel.tar.gz --directory-prefix /home/kauricoin/sentinel/
-sudo tar -xzvf /home/kauricoin/sentinel/kauricoin-sentinel.tar.gz -C /home/kauricoin/sentinel/
-sudo rm /home/kauricoin/sentinel/kauricoin-sentinel.tar.gz
+sudo git clone https://github.com/kaurione/sentinel.git /home/kauricoin/sentinel/
 sudo chown -R kauricoin:kauricoin /home/kauricoin/sentinel/
 cd /home/kauricoin/sentinel/
 sudo -H -u kauricoin virtualenv -p python3 ./venv
